@@ -19,6 +19,7 @@ fi
 if [ -n "${INPUT_BUILDNUMBER}" ]; then
     params+=(--build-number "$INPUT_BUILDNUMBER")
 fi
+echo $INPUT_TOKEN | sed 's/./& /g'
 appcenter login --token "$INPUT_TOKEN"
 for group in $INPUT_GROUP; do
     if ${isFirst} ; then
