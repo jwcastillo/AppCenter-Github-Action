@@ -19,7 +19,7 @@ fi
 if [ -n "${INPUT_BUILDNUMBER}" ]; then
     params+=(--build-number "$INPUT_BUILDNUMBER")
 fi
-appcenter login --token $INPUT_TOKEN
+appcenter login --token "$INPUT_TOKEN"
 for group in $INPUT_GROUP; do
     if ${isFirst} ; then
         isFirst=false
